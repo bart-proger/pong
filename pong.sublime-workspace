@@ -1,0 +1,1127 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pitch",
+				"pitcher"
+			],
+			[
+				"p",
+				"pitcher"
+			],
+			[
+				"fu",
+				"fun\tFunction"
+			],
+			[
+				"obj",
+				"objects"
+			],
+			[
+				"fra",
+				"frameH"
+			],
+			[
+				"o",
+				"offset"
+			],
+			[
+				"ra",
+				"racketRight"
+			],
+			[
+				"co",
+				"controller"
+			],
+			[
+				"sp",
+				"sprite"
+			],
+			[
+				"on",
+				"onDraw"
+			],
+			[
+				"s",
+				"sprite"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"a",
+				"args"
+			],
+			[
+				"doc",
+				"document\t: Document Window"
+			],
+			[
+				"fore",
+				"forEach\t( callbackfn: function, thisArg?: any ): voidvoid NativeScript - TemplateStringsArray"
+			],
+			[
+				"mp",
+				"Math_pow\t( x: number, y: number ): number Math"
+			],
+			[
+				"g",
+				"graphics"
+			],
+			[
+				"pr",
+				"prototype\t(engine.js)"
+			],
+			[
+				"i",
+				"input\t(engine.js)"
+			],
+			[
+				"get",
+				"getRect\t(graphics.js)"
+			],
+			[
+				"gra",
+				"graphics\t(engine.js)"
+			],
+			[
+				"re",
+				"rect"
+			],
+			[
+				"c",
+				"canvas"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"le",
+				"level"
+			],
+			[
+				"thi",
+				"this"
+			],
+			[
+				"ta",
+				"tank"
+			],
+			[
+				"P",
+				"PROT_DURATION"
+			],
+			[
+				"ti",
+				"time"
+			],
+			[
+				"up",
+				"update\t(game.js)"
+			],
+			[
+				"proto",
+				"proto\tPrototype"
+			],
+			[
+				"fr",
+				"freezeTime"
+			],
+			[
+				"fre",
+				"freezeTime"
+			],
+			[
+				"ene",
+				"enemiesFreezed"
+			],
+			[
+				"en",
+				"enemiesFreezed"
+			],
+			[
+				"free",
+				"freezeEnemies\t(bonus.js)"
+			],
+			[
+				"RO",
+				"ROWS-1)*SIZE"
+			],
+			[
+				"frame",
+				"frameDelay"
+			],
+			[
+				"po",
+				"point"
+			],
+			[
+				"console",
+				"console.log(\"tanks\t(game.js)"
+			],
+			[
+				"spa",
+				"spawned"
+			],
+			[
+				"respa",
+				"respawnTank"
+			],
+			[
+				"draw",
+				"draw"
+			],
+			[
+				"pla",
+				"playerSpawner"
+			],
+			[
+				"res",
+				"respawnTank\t(spawner.js)"
+			],
+			[
+				"Spa",
+				"Spawner\t(spawner.js)"
+			],
+			[
+				"this",
+				"this.y\t(tank.js)"
+			],
+			[
+				"drawE",
+				"drawEmergence\t(painter.js)"
+			],
+			[
+				"tank",
+				"tank2"
+			],
+			[
+				"for",
+				"forEach"
+			],
+			[
+				"Pa",
+				"Painter"
+			],
+			[
+				"dr",
+				"drawBrick"
+			],
+			[
+				"de",
+				"drawImage"
+			],
+			[
+				"pre",
+				"prevPos"
+			],
+			[
+				"explo",
+				"explosions"
+			],
+			[
+				"del",
+				"deltaTime"
+			],
+			[
+				"bull",
+				"bullet"
+			],
+			[
+				"fire",
+				"fireTime"
+			],
+			[
+				"e",
+				"else"
+			],
+			[
+				"ca",
+				"canvas"
+			],
+			[
+				"can",
+				"canvas"
+			],
+			[
+				"fir",
+				"fireTime"
+			],
+			[
+				"expl",
+				"explosions"
+			],
+			[
+				"E",
+				"EXPLO_FRAMES"
+			],
+			[
+				"dra",
+				"drawImage"
+			],
+			[
+				"bu",
+				"bullet"
+			],
+			[
+				"bul",
+				"bullet2"
+			],
+			[
+				"bullt",
+				"bullets"
+			],
+			[
+				"ite",
+				"item"
+			],
+			[
+				"b",
+				"bullets"
+			],
+			[
+				"ma",
+				"map"
+			],
+			[
+				"item",
+				"item2"
+			],
+			[
+				"coll",
+				"collisionTankTank"
+			],
+			[
+				"colo",
+				"color"
+			],
+			[
+				"align",
+				"align-self"
+			],
+			[
+				"fill",
+				"fillStyle"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 2375,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "game/ball.js",
+			"settings":
+			{
+				"buffer_size": 1844,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "game/racket.js",
+			"settings":
+			{
+				"buffer_size": 810,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "game.js",
+			"settings":
+			{
+				"buffer_size": 1534,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "//----------"
+			}
+		},
+		{
+			"file": "controller.js",
+			"settings":
+			{
+				"buffer_size": 163,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "//---------------"
+			}
+		},
+		{
+			"file": "game/player_controller.js",
+			"settings":
+			{
+				"buffer_size": 514,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "input.js",
+			"settings":
+			{
+				"buffer_size": 461,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "//----------"
+			}
+		},
+		{
+			"file": "game_object.js",
+			"settings":
+			{
+				"buffer_size": 1075,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "//----------------"
+			}
+		},
+		{
+			"file": "collider.js",
+			"settings":
+			{
+				"buffer_size": 148,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "//\tCollider"
+			}
+		},
+		{
+			"file": "box_collider.js",
+			"settings":
+			{
+				"buffer_size": 587,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "//\tBoxCollider"
+			}
+		},
+		{
+			"file": "sprite.js",
+			"settings":
+			{
+				"buffer_size": 794,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "//-----------"
+			}
+		},
+		{
+			"file": "graphics.js",
+			"settings":
+			{
+				"buffer_size": 1541,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "geometry.js",
+			"settings":
+			{
+				"buffer_size": 2119,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "utils.js",
+			"settings":
+			{
+				"buffer_size": 226,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"codeinte",
+				"SublimeCodeIntel: Reset"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ip",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"ip",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 416.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/OSPanel/domains/pong",
+		"/C/OSPanel/domains/pong/game"
+	],
+	"file_history":
+	[
+		"/C/OSPanel/domains/pong/game/racket.js",
+		"/C/OSPanel/domains/pong/game/ball.js",
+		"/C/OSPanel/domains/pong/game/walls.js",
+		"/F/__BART-PC1_D/Projects/C++ Builder/C++/Tetris/src/core.h",
+		"/C/Users/BART/AppData/Roaming/Sublime Text 3/Packages/User/SublimeCodeIntel.sublime-settings",
+		"/C/Users/BART/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/C/OSPanel/domains/pong/game_.js",
+		"/C/Users/BART/AppData/Roaming/Sublime Text 3/Packages/LiveReload/LiveReload.sublime-settings",
+		"/D/Projects/Visual Studio 2015/AdaptiveAgent3/AdaptiveAgent2/App.config",
+		"/D/Projects/Visual Studio 2015/RiotEngine/RiotEngine/Graphics.cpp",
+		"/D/Projects/AndroidStudio/HelloWorld/app/src/main/java/com/projects/bart/helloworld/CeilingPriceCalc.java",
+		"/C/Users/BART/AppData/Roaming/Sublime Text 3/Packages/All Autocomplete/All Autocomplete.sublime-settings",
+		"/C/Users/BART/AppData/Roaming/Sublime Text 3/Packages/JavaScript Completions/Default (Windows).sublime-keymap",
+		"/C/Users/BART/AppData/Roaming/Sublime Text 3/Packages/User/JavaScript-Completions.sublime-settings",
+		"/C/Users/BART/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/BART/AppData/Roaming/Sublime Text 3/Packages/JavaScript Completions/JavaScript-Completions.sublime-settings",
+		"/D/Projects/JavaScript/триангуляция/app.js",
+		"/D/Projects/JavaScript/триангуляция/engine/engine.js",
+		"/D/Projects/JavaScript/триангуляция/triang.sublime-project",
+		"/C/Users/BART/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/Default (Windows).sublime-keymap",
+		"/C/Users/BART/AppData/Roaming/Sublime Text 3/Packages/tern_for_sublime/Tern.sublime-settings",
+		"/C/Users/BART/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/C/Users/BART/AppData/Roaming/Sublime Text 3/Packages/User/All Autocomplete.sublime-settings",
+		"/D/Projects/JavaScript/триангуляция/engine.js",
+		"/D/Projects/JavaScript/триангуляция/geometry.js",
+		"/D/Projects/JavaScript/триангуляция/graphics.js",
+		"/D/Projects/JavaScript/триангуляция/Новый текстовый документ.txt",
+		"/D/Projects/JavaScript/часы.html",
+		"/D/Projects/JavaScript/tanks/часы.html",
+		"/C/Users/BART/AppData/Roaming/Sublime Text 3/Packages/Web Inspector/Default (Windows).sublime-keymap",
+		"/C/Users/BART/AppData/Roaming/Sublime Text 3/Packages/Web Inspector/swi.sublime-settings",
+		"/D/Documents/Desktop/123.html",
+		"/D/Projects/JavaScript/tanks/protection.js",
+		"/D/Projects/JavaScript/tanks/tanks.html",
+		"/D/Projects/JavaScript/tanks/style.css",
+		"/D/Projects/JavaScript/tanks/main.js"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"collider.box",
+			"bbox",
+			"fh",
+			"fw",
+			"bbox",
+			"Racket",
+			"events",
+			"racketLeft",
+			"//GameObject.prototype.onCollisionEnter = function() {};\n",
+			"gameObject",
+			"key",
+			"01",
+			"02",
+			"x02",
+			"float",
+			"Enter",
+			"onCollisionEnter",
+			"x",
+			"y",
+			"args",
+			"j",
+			"other",
+			"params",
+			"a",
+			"frame",
+			"a",
+			"offset",
+			"x",
+			"b",
+			"a",
+			"b",
+			"a",
+			"prototype",
+			"Point.prototype.add = function(a) {\n\tthis.x += a.x;\n\tthis.y += a.y;\n\treturn this;\n};"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2375,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								960,
+								960
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 540.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "game/ball.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1844,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1065,
+								1065
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "game/racket.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 810,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								810,
+								810
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "game.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1534,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								109,
+								109
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_name": "//----------",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 163,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								163,
+								163
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_name": "//---------------",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "game/player_controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 514,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								288,
+								303
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_name": "",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "input.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 461,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								457,
+								457
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_name": "//----------",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "game_object.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1075,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1072,
+								1072
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_name": "//----------------",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "collider.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 148,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								90,
+								90
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_name": "//\tCollider",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "box_collider.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 587,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								64,
+								64
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_name": "//\tBoxCollider",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "sprite.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 794,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								235,
+								235
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_name": "//-----------",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "graphics.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1541,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1469,
+								1469
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "geometry.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2119,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								230,
+								230
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "utils.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 226,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								159,
+								159
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.exec":
+	{
+		"height": 118.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 118.0
+	},
+	"pinned_build_system": "",
+	"project": "pong.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 191.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
