@@ -1,7 +1,7 @@
 //----------
 //	Game
 //----------
-
+include("game_object.js");
 
 var Game = function() {
 	
@@ -42,7 +42,7 @@ Game.prototype.update = function() {
 	});
 	this.checkCollisions();
 	this.objects.forEach(function(o) {
-		if (o.onUpdate) o.onUpdate()  
+		if (o.onUpdate) o.onUpdate();
 	});
 };
 Game.prototype.draw = function() {
