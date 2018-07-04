@@ -17,9 +17,9 @@ var Racket = function(name, x, y) {
 Racket.prototype = Object.create(GameObject.prototype);
 Racket.prototype.constructor = Racket;
 
-Racket.prototype.onDraw = function() {
-	drawSprite(this.sprite, this.position.x - this.sprite.frameW / 2, this.position.y - this.sprite.frameH / 2);
-};
+/*Racket.prototype.onDraw = function() {
+	drawSprite(this.sprite, this.position.x - this.sprite.frameSize.w / 2, this.position.y - this.sprite.frameSize.h / 2);
+};*/
 Racket.prototype.onCollision = function(object) {
 	switch (object.name) {
 		case "top":

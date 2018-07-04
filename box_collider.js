@@ -2,13 +2,12 @@
 
 
 var BoxCollider = function(owner, x, y, w, h) {
+	Collider.call(this, [owner]);
 
-	Collider.apply(this, arguments);
 	this.owner = owner;
 	this.box = new Rect(x, y, w, h);
 
 };
-
 BoxCollider.prototype = Object.create(Collider.prototype);
 BoxCollider.prototype.constructor = BoxCollider;
 

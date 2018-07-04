@@ -49,6 +49,29 @@ Point.prototype.distanceTo = function(a) {
 	return Math.sqrt((a.x-this.x)*(a.x-this.x) + (a.y-this.y)*(a.y-this.y));
 };
 
+//	Size
+//-----------------------------------
+
+var Size = function(w, h) {
+	
+	this.w = 0;
+	this.h = 0;
+
+	if (w !== undefined) {
+		if (w instanceof Size) {
+			this.w = w.w;
+			this.h = w.h;
+		}
+		else {
+			this.w = w;
+			this.h = h;
+		}		
+	}
+};
+Size.prototype.toPoint = function() {
+	return new Point(this.w, this.h);
+};
+
 //	Rectangle
 //------------------------------------
 

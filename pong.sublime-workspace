@@ -315,7 +315,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 2395,
+				"buffer_size": 1068,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -324,7 +324,7 @@
 			"file": "game/ball.js",
 			"settings":
 			{
-				"buffer_size": 1844,
+				"buffer_size": 1814,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -342,7 +342,7 @@
 			"file": "game.js",
 			"settings":
 			{
-				"buffer_size": 1534,
+				"buffer_size": 1558,
 				"encoding": "UTF-8",
 				"line_ending": "Windows",
 				"name": "//----------"
@@ -411,7 +411,7 @@
 			"file": "sprite.js",
 			"settings":
 			{
-				"buffer_size": 794,
+				"buffer_size": 484,
 				"encoding": "UTF-8",
 				"line_ending": "Windows",
 				"name": "//-----------"
@@ -421,7 +421,7 @@
 			"file": "graphics.js",
 			"settings":
 			{
-				"buffer_size": 1541,
+				"buffer_size": 1796,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -430,7 +430,7 @@
 			"file": "geometry.js",
 			"settings":
 			{
-				"buffer_size": 2119,
+				"buffer_size": 2226,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -684,15 +684,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2395,
+						"buffer_size": 1068,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								280,
-								280
+								0,
+								0
 							]
 						],
 						"settings":
@@ -715,15 +715,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1844,
+						"buffer_size": 1814,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1065,
-								1065
+								0,
+								0
 							]
 						],
 						"settings":
@@ -735,7 +735,7 @@
 						"translation.y": 108.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -765,7 +765,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -774,15 +774,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1534,
+						"buffer_size": 1558,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								109,
-								109
+								0,
+								0
 							]
 						],
 						"settings":
@@ -984,15 +984,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 794,
+						"buffer_size": 484,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								235,
-								235
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1014,15 +1014,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1541,
+						"buffer_size": 1796,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1469,
-								1469
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1035,7 +1035,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1044,15 +1044,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2119,
+						"buffer_size": 2226,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								230,
-								230
+								0,
+								0
 							]
 						],
 						"settings":

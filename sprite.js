@@ -3,27 +3,26 @@
 //-----------
 
 
-var Sprite = function(x, y, w, h, framesInRow, framesInCol) {
+var Sprite = function(tx, ty, tw, th, framesInRow, framesInCol) {
+
+	this.position = null;
 
 	this.textureRegion = null;
-	this.framesInCol = 0;
-	this.framesInRow = 0;
 	this.frames = [];
 	this.frameIndex = 0;
-	this.frameW = 0;
-	this.frameH = 0;
+	this.frameSize = null;
 	
-	if (x !== undefined) {
-		this.textureRegion = new Rect(x, y, w, h);
-		this.framesInCol = framesInCol;
-		this.framesInRow = framesInRow;
+	if (tx !== undefined) {
+		this.textureRegion = new Rect(tx, ty, tw, th);
 
 		//	создние кадров
-		this.frameW = Math.floor(this.textureRegion.w / this.framesInRow);
-		this.frameH = Math.floor(this.textureRegion.h / this.framesInCol);
-		for(var j = 0; j < this.framesInCol; j++) {
-			for(var i = 0; i < this.framesInRow; i++) {
-				this.frames.push(new Rect(i*this.frameW + this.textureRegion.x, j*this.frameH + this.textureRegion.y, this.frameW, this.frameH)); 
+		this.frameSize = new Size(Math.floor(this.textureRegion.w / framesInRow), 
+								  Math.floor(this.textureRegion.h / framesInCol));
+		this.position = new Point(-this.frameSize.w / 2, -this.frameSize.h / 2);
+
+		for(var j = 0; j < framesInCol; j++) {
+			for(var i = 0; i < framesInRow; i++) {
+				this.frames.push(new Rect(i*this.frameSize.w + this.textureRegion.x, j*this.frameSize.h + this.textureRegion.y, this.frameSize.w, this.frameSize.h));
 			}
 		}
 	}

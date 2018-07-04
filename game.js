@@ -1,7 +1,6 @@
 //----------
 //	Game
 //----------
-include("game_object.js");
 
 var Game = function() {
 	
@@ -47,7 +46,10 @@ Game.prototype.update = function() {
 };
 Game.prototype.draw = function() {
 	this.objects.forEach(function(o) {
-		if (o.onDraw) o.onDraw();
+		if (o.sprite) {
+			drawSprite(o.sprite, o.position.x + o.sprite.position.x, o.position.y + o.sprite.position.y);
+		}
+		//if (o.onDraw) o.onDraw();
 		if (this.isDebug) o.showDbgInfo();
 	}, this); 
 };

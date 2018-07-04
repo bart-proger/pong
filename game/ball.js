@@ -2,8 +2,8 @@
 // Ball
 
 var Ball = function(x, y) {
+	GameObject.call(this);
 
-	GameObject.apply(this, null);
 	this.name = "ball";
 	this.position = new Point(x, y);
 
@@ -18,9 +18,9 @@ var Ball = function(x, y) {
 Ball.prototype = Object.create(GameObject.prototype);
 Ball.prototype.constructor = Ball;
 
-Ball.prototype.onDraw = function() {
-	drawSprite(this.sprite, this.position.x - this.sprite.frameW / 2, this.position.y - this.sprite.frameH / 2);
-};
+/*Ball.prototype.onDraw = function() {
+	drawSprite(this.sprite, this.position.x - this.sprite.frameSize.w / 2, this.position.y - this.sprite.frameSize.h / 2);
+};*/
 Ball.prototype.onUpdate = function() {
 	if (this.pitcher) {
 		this.position = new Point(this.pitcher.position.x, this.pitcher.position.y - 20);

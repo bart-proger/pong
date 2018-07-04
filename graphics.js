@@ -11,8 +11,8 @@ texture.src = "texture.png";
 var drawSprite = function(sprite, x, y) {
 	var f = sprite.frames[sprite.frameIndex];
 	context.drawImage(texture, f.x, f.y, f.w, f.h, x, y, f.w, f.h);
+	//console.log(f);
 };
-
 
 function createCanvas(w, h, color) {
 	canvas = document.createElement("canvas");
