@@ -1,14 +1,14 @@
 
 // Racket
 
-var Racket = function(name, x, y) {
+function Racket(name, x, y) {
 
 	GameObject.apply(this, null);
 	this.name = name;
 	this.position = new Point(x, y);
 
 	this.sprite = new Sprite(18, 0, 47, 121, 1, 1);
-	this.collider = new BoxCollider(this, -48/2, -78/2, 48, 78);
+	this.collider = new BoxCollider1(this, -48/2, -78/2, 48, 78);
 
 	this.score = 0;
 

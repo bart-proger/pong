@@ -3,7 +3,7 @@
 //-----------
 
 
-var Sprite = function(tx, ty, tw, th, framesInRow, framesInCol) {
+function Sprite(tx, ty, tw, th, framesInRow, framesInCol) {
 
 	this.position = null;
 

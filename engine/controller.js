@@ -3,7 +3,7 @@
 //---------------
 
 
-var Controller = function(owner) {
+function Controller(owner) {
 
 	this.owner = owner;
 	

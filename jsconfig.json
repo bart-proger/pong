@@ -1,9 +1,5 @@
 {
-    "compilerOptions": {
-        "target": "es6"
-    },
     "include": [
-        "*",
-        "game/*"
+        "./**/*.js"
     ]
 }

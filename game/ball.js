@@ -1,14 +1,14 @@
 
 // Ball
 
-var Ball = function(x, y) {
+function Ball(x, y) {
 	GameObject.call(this);
 
 	this.name = "ball";
 	this.position = new Point(x, y);
 
 	this.sprite = new Sprite(0, 0, 16, 16, 1, 1); 
-	this.collider = new BoxCollider(this, -8, -8, 16, 16);
+	this.collider = new BoxCollider1(this, -8, -8, 16, 16);
 
 	this.speed = 5;
 	this.direction = new Point(1, 1);
@@ -24,7 +24,7 @@ Ball.prototype.constructor = Ball;
 Ball.prototype.onUpdate = function() {
 	if (this.pitcher) {
 		this.position = new Point(this.pitcher.position.x, this.pitcher.position.y - 20);
-		if (input.isKeyDown("Space")) {
+		if (Input.isKeyDown("Space")) {
 			this.pitcher = null;
 		}
 	}

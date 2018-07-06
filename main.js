@@ -2,6 +2,8 @@
 main script
 */
 
+createCanvas(600, 400, "black");
+
 var game = new Game();
 game.isDebug = true;
 

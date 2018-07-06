@@ -1,7 +1,7 @@
 //	BoxCollider
 
 
-var BoxCollider = function(owner, x, y, w, h) {
+function BoxCollider(owner, x, y, w, h) { 
 	Collider.call(this, [owner]);
 
 	this.owner = owner;

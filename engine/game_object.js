@@ -2,13 +2,13 @@
 //	GameObject
 //----------------
 
-var GameObject = function(name, x, y, w, h) {
+function GameObject(name, x, y, w, h) {
 
 	this.name = name ? name : "unnamed-" + Math.floor(random(0, 1000));
 	this.position = new Point(x, y);
 
 	this.sprite = null;
-	this.collider = new BoxCollider(this, -w/2, -h/2, w, h);
+	this.collider = new BoxCollider1(this, -w/2, -h/2, w, h);
 	this.controller = null;
 };
 //GameObject.prototype.onUpdate = function() {};
