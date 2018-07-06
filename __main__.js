@@ -2,7 +2,7 @@
 main script
 */
 
-createCanvas(600, 400, "black");
+Graphics.createCanvas(600, 400, "black");
 
 var game = new Game();
 game.isDebug = true;
@@ -15,14 +15,14 @@ var racketLeft = new Racket("racket-left", 50, height/2);
 racketLeft.collider.box.y -= racketLeft.collider.box.h / 4;
 racketLeft.collider.box.w /= 5;
 racketLeft.collider.box.x = -racketLeft.collider.box.w + 7;
-racketLeft.sprite = new Sprite(19, 0, 47, 121, 1, 1);
+racketLeft.sprite = new Sprite(new Rect(19, 0, 47, 121));
 racketLeft.sprite.position.x += -5;
 
 var racketRight = new Racket("racket-right", width - 50, height/2);
 racketRight.collider.box.y -= racketRight.collider.box.h / 4;
 racketRight.collider.box.w /= 5;
 racketRight.collider.box.x = 0 - 7;
-racketRight.sprite = new Sprite(81, 0, 47, 121, 1, 1);
+racketRight.sprite = new Sprite(new Rect(81, 0, 47, 121));
 racketRight.sprite.position.x += 5;
 
 racketLeft.controller = new PlayerController(racketLeft);

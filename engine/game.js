@@ -47,7 +47,11 @@ Game.prototype.update = function() {
 Game.prototype.draw = function() {
 	this.objects.forEach(function(o) {
 		if (o.sprite) {
-			drawSprite(o.sprite, o.position.x + o.sprite.position.x, o.position.y + o.sprite.position.y);
+			var sw = o.sprite.textureRect.w * o.sprite.scale.x,
+				sh = o.sprite.textureRect.h * o.sprite.scale.y;
+			Graphics.drawSprite(o.sprite.textureRect, 
+								o.position.x + o.sprite.position.x - sw/2, o.position.y + o.sprite.position.y - sh/2, 
+								sw, sh);
 		}
 		//if (o.onDraw) o.onDraw();
 		if (this.isDebug) o.showDbgInfo();

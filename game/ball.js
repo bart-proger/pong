@@ -7,8 +7,8 @@ function Ball(x, y) {
 	this.name = "ball";
 	this.position = new Point(x, y);
 
-	this.sprite = new Sprite(0, 0, 16, 16, 1, 1); 
-	this.collider = new BoxCollider1(this, -8, -8, 16, 16);
+	this.sprite = new Sprite(new Rect(0, 0, 16, 16)); 
+	this.collider = new BoxCollider(this, -8, -8, 16, 16);
 
 	this.speed = 5;
 	this.direction = new Point(1, 1);
@@ -31,6 +31,7 @@ Ball.prototype.onUpdate = function() {
 	else
 		this.position.add(new Point(this.direction.x * this.speed, this.direction.y * this.speed)); 
 };
+
 Ball.prototype.onCollisionEnter = function(object) {
 	switch (object.name) {
 		case "top":
@@ -54,27 +55,3 @@ Ball.prototype.onCollisionEnter = function(object) {
 			break;
 	}
 };
-
-
-/*var ball = {
-  x: width / 2,
-  y: height / 2,
-  r: 7,
-  vx: 1,
-  vy: 1,
-  speed: 7,
-  contact: true,
-  rect: function() {
-    return new Rect(this.x - this.r, this.y - this.r, this.r * 2, this.r * 2);
-  },
-  move: function() {
-    this.x += this.vx * this.speed;
-    this.y += this.vy * this.speed;
-  },
-  reset: function() {
-    this.x = width / 2;
-    this.y = height / 2;
-    this.vx = (random(0, 1) == 0) ? -1 : 1;
-    this.vy = (random(0, 1) == 0) ? -1 : 1;
-  }
-};*/

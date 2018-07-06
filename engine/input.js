@@ -2,23 +2,22 @@
 //	Input
 //----------
 
-var Input = (function(){
-	return {
-		keys: [],
-		mousePosition: null,
-	
-		isKeyDown: function(key) {
-			return this.keys[key] && (this.keys[key] === "down"/* || this.keys[key] === "press"*/);
-		},
-		isKeyUp: function(key) {
-			return this.keys[key] && (this.keys[key] === "up");
-		}
-	};
-}());
+var Input = new function(){
 
-document.addEventListener("keydown", function(e) {
-	Input.keys[e.code] = "down";
-});
-document.addEventListener("keyup", function(e) {
-	Input.keys[e.code] = "up";
-});
+		var keys = [];
+		var mousePosition = null;
+	
+		this.isKeyDown = function(key) {
+			return keys[key] && (keys[key] === "down"/* || this.keys[key] === "press"*/);
+		};
+		this.isKeyUp = function(key) {
+			return keys[key] && (keys[key] === "up");
+		};
+
+		document.addEventListener("keydown", function(e) {
+			keys[e.code] = "down";
+		});
+		document.addEventListener("keyup", function(e) {
+			keys[e.code] = "up";
+		});
+};

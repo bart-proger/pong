@@ -2,7 +2,16 @@
 //	Sprite
 //-----------
 
+function Sprite(textureRect) {
+	Transformable.call(this);
+	
+	this.textureRect = textureRect;
 
+};
+Sprite.prototype = Object.create(Transformable.prototype);
+Sprite.prototype.constructor = Sprite;
+
+/*
 function Sprite(tx, ty, tw, th, framesInRow, framesInCol) {
 
 	this.position = null;
@@ -27,3 +36,4 @@ function Sprite(tx, ty, tw, th, framesInRow, framesInCol) {
 		}
 	}
 };
+*/

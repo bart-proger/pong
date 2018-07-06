@@ -3,9 +3,31 @@
 //------------
 
 var canvas, context, width, height;
-
 var texture = new Image();
 texture.src = "texture.png";
+
+
+
+var Graphics = new function(){
+
+	//var canvas, context;
+	//var width, height;
+
+	this.createCanvas = function(w, h, color) {
+		canvas = document.createElement("canvas");
+		canvas.style = "border:1px solid black;background-color:" + color;
+		width = canvas.width = w;
+		height = canvas.height = h;
+		document.body.insertBefore(canvas, document.body.childNodes[0]);
+		context = canvas.getContext("2d");
+	};
+
+	this.drawSprite = function(textureRect, x, y, w, h) {
+		context.drawImage(texture, textureRect.x, textureRect.y, textureRect.w, textureRect.h, x, y, w, h);
+	};
+	
+};
+
 
 
 var drawSprite = function(sprite, x, y) {
