@@ -13,17 +13,17 @@ var ball = new Ball(width / 2, height / 2);
 
 var racketLeft = new Racket("racket-left", 50, height/2);
 racketLeft.collider.box.y -= racketLeft.collider.box.h / 4;
-racketLeft.collider.box.w /= 4;
+racketLeft.collider.box.w /= 5;
 racketLeft.collider.box.x = -racketLeft.collider.box.w + 7;
 racketLeft.sprite = new Sprite(19, 0, 47, 121, 1, 1);
-racketLeft.sprite.position.x += -3;
+racketLeft.sprite.position.x += -5;
 
 var racketRight = new Racket("racket-right", width - 50, height/2);
 racketRight.collider.box.y -= racketRight.collider.box.h / 4;
-racketRight.collider.box.w /= 4;
+racketRight.collider.box.w /= 5;
 racketRight.collider.box.x = 0 - 7;
 racketRight.sprite = new Sprite(81, 0, 47, 121, 1, 1);
-racketRight.sprite.position.x += 3
+racketRight.sprite.position.x += 5;
 
 racketLeft.controller = new PlayerController(racketLeft);
 racketRight.controller = new PlayerController(racketRight);
@@ -37,12 +37,15 @@ game.addObject(racketLeft);
 game.addObject(racketRight);
 game.addObject(ball);
 
+var score = new Score();
+
 
 var frame = function(dt) {
-    game.update();
-    clear();
-    color('green');
-    fillRect(0, 0, width, height);
-    game.draw();
+	game.update();
+	clear();
+	color('green');
+	fillRect(0, 0, width, height);
+	game.draw();
+	score.onDraw();
 };
 setInterval(frame, 16);

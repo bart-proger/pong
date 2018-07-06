@@ -55,7 +55,8 @@ function drawCircle(x, y, r) {
 	context.arc(x, y, r, 0, 2 * Math.PI);
 	context.stroke();
 }
-function drawText(text, x, y) {
+function drawText(text, x, y, align) {
+	context.textAlign = align ? align : "left";
 	context.fillText(text, x, y);
 }
 function textWidth(text) {

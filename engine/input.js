@@ -13,7 +13,6 @@ var Input = (function(){
 		isKeyUp: function(key) {
 			return this.keys[key] && (this.keys[key] === "up");
 		}
-	
 	};
 }());
 
