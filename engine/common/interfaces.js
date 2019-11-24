@@ -3,11 +3,12 @@
 
 function Updatable () {}
 Updatable.prototype.onUpdate = function(dt) {};
-
-
+/*
+function Drawable () {}
+Drawable.prototype.onDraw = function() {};
+*/
 function Transformable() {
 	this.position = new Point(0, 0);
 	this.rotation = 0;
 	this.scale = new Point(1, 1);
-	
 }

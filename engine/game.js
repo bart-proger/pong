@@ -2,68 +2,47 @@
 //	Game
 //----------
 
-var Game = function() {
+var Game = new function() {
 	
-	this.objects = [];
 	this.isDebug = false;
+	this.objects = [];
+	
+	var states = [];
+	var currentState = null;
 
-};
-
-Game.prototype.checkCollisions = function() {
-	for (var i = 0; i < this.objects.length-1; i++) {
-		for (var j = i+1; j < this.objects.length; j++) {
-			var a = this.objects[i],
-				b = this.objects[j];
-			if (a.collider && b.collider) { 
-				if (a.collider.intersect(b.collider)) {
-					if (!a.collider.contacts.includes(b)) {
-						a.collider.contacts.push(b);
-						b.collider.contacts.push(a);
-						if (a.onCollisionEnter) a.onCollisionEnter(b);  
-						if (b.onCollisionEnter) b.onCollisionEnter(a);
-					}
-					if (a.onCollision) a.onCollision(b);  
-					if (b.onCollision) b.onCollision(a);
-				} 
-				else {
-					a.collider.contacts.remove(b);
-					b.collider.contacts.remove(a);
-					if (a.onCollisionExit) a.onCollisionExit(b);  
-					if (b.onCollisionExit) b.onCollisionExit(a);
-				}
+	this.getState = function(name) {
+		return (states.find(function(s) {
+			return s.name === name;
+		}));
+	};
+	this.gotoState = function(name) {
+		if (currentState && currentState.onExit) currentState.onExit();
+		currentState = this.getState(name);
+		if (currentState && currentState.onEnter) currentState.onEnter();
+	};
+	this.addObject = function(object) {
+		if (object instanceof GameObject) {
+			this.objects.push(object);
+		}
+	};
+	this.getObject = function(name) {
+		return (this.objects.find(function(o) {
+			return o.name === name;
+		}));
+	};
+	this.start = function() {
+		var frame = function(dt) {
+			if (currentState) {
+				currentState.update();
+//TODO: перенести в нужный state
+				Graphics.clear();
+				Graphics.color('green');
+				Graphics.fillRect(0, 0, width, height);
+//---
+				currentState.draw();
 			}
-		}
-	}
-};
-Game.prototype.update = function() {
-	this.objects.forEach(function(o) {
-		if (o.controller) o.controller.onUpdate();
-	});
-	this.checkCollisions();
-	this.objects.forEach(function(o) {
-		if (o.onUpdate) o.onUpdate();
-	});
-};
-Game.prototype.draw = function() {
-	this.objects.forEach(function(o) {
-		if (o.sprite) {
-			var sw = o.sprite.textureRect.w * o.sprite.scale.x,
-				sh = o.sprite.textureRect.h * o.sprite.scale.y;
-			Graphics.drawSprite(o.sprite.textureRect, 
-								o.position.x + o.sprite.position.x - sw/2, o.position.y + o.sprite.position.y - sh/2, 
-								sw, sh);
-		}
-		//if (o.onDraw) o.onDraw();
-		if (this.isDebug) o.showDbgInfo();
-	}, this); 
-};
-Game.prototype.addObject = function(object) {
-	if (object instanceof GameObject) {
-		this.objects.push(object);
-	}
-};
-Game.prototype.getObject = function(name) {
-	return (this.objects.find(function(o) {
-		return o.name === name;
-	}));
+		};
+		setInterval(frame, 16);
+	};
+
 };

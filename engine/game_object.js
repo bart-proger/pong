@@ -11,11 +11,14 @@ function GameObject(name, x, y, w, h) {
 	this.collider = new BoxCollider(this, -w/2, -h/2, w, h);
 	this.controller = null;
 };
+
 //GameObject.prototype.onUpdate = function() {};
 //GameObject.prototype.onDraw = function() {};
 //GameObject.prototype.onCollisionEnter = function() {};
 //GameObject.prototype.onCollision = function() {};
 //GameObject.prototype.onCollisionExit = function() {};
+//GameObject.prototype.onShowDbgInfo = function() {};
+
 GameObject.prototype.showDbgInfo = function() {
 	color("white");
 	font("12px Arial");

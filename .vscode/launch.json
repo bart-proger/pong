@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Запустить Chrome для localhost",
-            "url": "http://pong/",
+            "url": "http://127.0.0.1:5500/index.html",
             "webRoot": "${workspaceFolder}"
         }
     ]

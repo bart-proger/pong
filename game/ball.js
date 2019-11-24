@@ -44,12 +44,12 @@ Ball.prototype.onCollisionEnter = function(object) {
 				this.direction.x *= -1;
 			break;
 		case "left":
-			this.pitcher = game.getObject("racket-right");
+			this.pitcher = Game.getObject("racket-right");
 			this.pitcher.score++;
 			this.direction.x = -1;
 			break;
 		case "right":
-			this.pitcher = game.getObject("racket-left");
+			this.pitcher = Game.getObject("racket-left");
 			this.pitcher.score++;
 			this.direction.x = 1;
 			break;
