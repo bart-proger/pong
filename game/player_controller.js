@@ -13,10 +13,13 @@ PlayerController.prototype.constructor = PlayerController;
 
 PlayerController.prototype.onUpdate = function() {
 	if (Input.isKeyDown("ArrowDown")) {
-		this.owner.position.y += 10;
+		this.owner.position.y += 5;
 	}
 	if (Input.isKeyDown("ArrowUp")){
-		this.owner.position.y += -10;
+		this.owner.position.y += -5;
 	}
-	//console.log(this.owner.bbox.x + " " + this.owner.bbox.y);
+	var ball = Game.getCurrentScene().getObject("ball");
+	if (this.owner === ball.pitcher && Input.isKeyDown("Space")) {
+		ball.pitcher = null;
+	}
 };

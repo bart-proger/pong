@@ -3,24 +3,22 @@
 
 
 function AiController(owner) {
-
-	Controller.apply(this, arguments);
+	Controller.call(this, owner);
 
 };
-
 AiController.prototype = Object.create(Controller.prototype);
 AiController.prototype.constructor = AiController;
 
 AiController.prototype.onUpdate = function() {
-    var ball = Game.getObject("ball");
-	if (this.owner.position.y < ball.position.y) {
-		this.owner.position.y += 10;
+    var ball = Game.getCurrentScene().getObject("ball");
+	if (this.owner.position.y-20 < ball.position.y) {
+		this.owner.position.y += 4;
 	}
-	else if (this.owner.position.y > ball.position.y){
-		this.owner.position.y -= 10;
+	if (this.owner.position.y-20 > ball.position.y){
+		this.owner.position.y -= 4;
     }
-    else if (this === ball.pitcher) {
-        
+    if (this.owner === ball.pitcher) {
+		ball.pitcher = null;
     }
 	//console.log(this.owner.bbox.x + " " + this.owner.bbox.y);
 };

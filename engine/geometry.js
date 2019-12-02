@@ -22,6 +22,11 @@ var Point = function(x, y) {
 		}		
 	}
 };
+Point.prototype.set = function(point) {
+	this.x += point.x;
+	this.y += point.y;
+	return this;
+};
 Point.prototype.add = function(point) {
 	this.x += point.x;
 	this.y += point.y;
@@ -48,6 +53,11 @@ Point.prototype.length = function() {
 Point.prototype.distanceTo = function(a) {
 	return Math.sqrt((a.x-this.x)*(a.x-this.x) + (a.y-this.y)*(a.y-this.y));
 };
+Point.prototype.normalize = function() {
+	return this.div(this.length());
+};
+
+
 
 //	Size
 //-----------------------------------

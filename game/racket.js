@@ -1,7 +1,7 @@
 
 // Racket
 
-function Racket(name, x, y) {
+function Racket(name, x, y, lookTo) {
 
 	GameObject.apply(this, null);
 	this.name = name;
@@ -11,6 +11,7 @@ function Racket(name, x, y) {
 	this.collider = new BoxCollider(this, -48/2, -78/2, 48, 78);
 
 	this.score = 0;
+	this.lookTo = lookTo;
 
 };
 
@@ -30,7 +31,3 @@ Racket.prototype.onCollision = function(object) {
 			break;
 	}
 };
-
-
-
-//TODO: вывод счета и разделительной линии

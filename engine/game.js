@@ -1,28 +1,38 @@
-//----------
-//	Game
-//----------
+
+  ////////////
+ //  Game  //
+////////////
+
 
 var Game = new function() {
 	
 	this.isDebug = false;
 	this.objects = [];
 	
-	var states = [];
-	var currentState = null;
+	var scenes = [];
+	var currentScene = null;
 
-	this.getState = function(name) {
-		return (states.find(function(s) {
+	this.getCurrentScene = function() {
+		return currentScene;
+	};
+	this.addScene = function(gameScene) {
+		if (gameScene instanceof GameScene && !scenes.includes(gameScene)) {
+			scenes.push(gameScene);
+		}
+	};
+	this.getScene = function(name) {
+		return (scenes.find(function(s) {
 			return s.name === name;
 		}));
 	};
-	this.gotoState = function(name) {
-		if (currentState && currentState.onExit) currentState.onExit();
-		currentState = this.getState(name);
-		if (currentState && currentState.onEnter) currentState.onEnter();
+	this.gotoScene = function(name) {
+		if (currentScene && currentScene.onExit) currentScene.onExit();
+		currentScene = this.getScene(name);
+		if (currentScene && currentScene.onEnter) currentScene.onEnter();
 	};
-	this.addObject = function(object) {
-		if (object instanceof GameObject) {
-			this.objects.push(object);
+	this.addObject = function(gameObject) {
+		if (gameObject instanceof GameObject && !this.objects.includes(gameObject)) {
+			this.objects.push(gameObject);
 		}
 	};
 	this.getObject = function(name) {
@@ -30,16 +40,17 @@ var Game = new function() {
 			return o.name === name;
 		}));
 	};
-	this.start = function() {
+	this.start = function(sceneName) {
+		this.gotoScene(sceneName);
 		var frame = function(dt) {
-			if (currentState) {
-				currentState.update();
-//TODO: перенести в нужный state
+			if (currentScene) {
+				currentScene.update();
+//TODO: перенести в нужный scene
 				Graphics.clear();
 				Graphics.color('green');
 				Graphics.fillRect(0, 0, width, height);
 //---
-				currentState.draw();
+				currentScene.draw();
 			}
 		};
 		setInterval(frame, 16);
