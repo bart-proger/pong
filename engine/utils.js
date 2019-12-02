@@ -19,7 +19,7 @@ var Utils = new function() {
 };
 
 Math.randomRange = function(min, max) {
-	return Math.random() * (max - min) + min;
+	return Math.trunc(Math.random() * (max - min) + min);
 };
 Math.randomBool = function() {
 	return Math.random() < 0.5;

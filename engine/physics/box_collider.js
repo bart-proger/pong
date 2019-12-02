@@ -3,8 +3,7 @@
 
 function BoxCollider(owner, x, y, w, h) { 
 	Collider.call(this, owner);
-
-	this.owner = owner;
+	
 	this.box = new Rect(x, y, w, h);
 
 };

@@ -4,7 +4,7 @@
 ////////////
 
 
-(function () {
+!function () {
 
 	Graphics.createCanvas(600, 400, "black");
 
@@ -43,7 +43,6 @@
 	scenePlay.addObject(new Score());
 
 	Game.addScene(scenePlay);
-
 	Game.start("scene-play");
 
-})();
+}();

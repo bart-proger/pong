@@ -1,6 +1,8 @@
-//------------
-//	Animator
-//------------
+
+  ////////////////
+ //	 Animator  //
+////////////////
+
 
 function Animator(owner) {
 	Updatable.call(this);
