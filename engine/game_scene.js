@@ -76,7 +76,10 @@ GameScene.prototype.draw = function() {
         if (o.onDraw) o.onDraw();
         if (Game.isDebug) {
             o.showDbgInfo();
-            if (o.onShowDbgInfo) o.onShowDbgInfo();
+            if (o.onShowDbgInfo) 
+                o.onShowDbgInfo();
+            if (o.controller && o.controller.onShowDbgInfo) 
+                o.controller.onShowDbgInfo();
         }
     }, this); 
 };

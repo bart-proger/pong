@@ -35,3 +35,20 @@ Array.prototype.remove = function(element) {
 Array.prototype.last = function() {
 	return this[this.length-1];
 };
+Array.prototype.max = function() {
+	return this.reduce(function(max, cur) {
+		return (cur > max) ? cur : max;
+	});
+};
+Array.prototype.min = function() {
+	return this.reduce(function(min, cur) {
+		return (cur > min) ? cur : min;
+	});
+};
+Array.prototype.intersect = function(array) {
+	var result = [];
+	array.forEach(v => {
+		if (this.includes(v)) result.push(v);
+	});
+	return result;
+};

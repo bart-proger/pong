@@ -8,7 +8,7 @@
 
 	Graphics.createCanvas(600, 400, "black");
 
-	Game.isDebug = false;
+	Game.isDebug = true;
 
 	var ball = new Ball(width / 2, height / 2);
 	//ball.sprite = new Sprite(img, new Rect(0, 0, 16, 16));

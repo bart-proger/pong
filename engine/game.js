@@ -3,7 +3,6 @@
  //  Game  //
 ////////////
 
-
 var Game = new function() {
 	
 	this.isDebug = false;
@@ -51,6 +50,7 @@ var Game = new function() {
 				Graphics.fillRect(0, 0, width, height);
 //---
 				currentScene.draw();
+				
 			}
 		};
 		setInterval(frame, 16);

@@ -1,46 +1,38 @@
 
-function Neuron(inputsCount) {
+function Neuron(parents) {
 
-    this.repetitions = []
-    for (let i = 0; i < inputsCount; i++) {
-        this.repetitions[this.repetitions.length] = 0;
-    }
+    this.parents = parents;
+    this.childs = [];
+    this.order = !parents ? 0 : 1 + parents.reduce((max, cur) => {
+        return (cur.order > max) ? cur.order : max;
+    }, 0);
+    this.repetition = 0;
+    this.inputs = [];
     this.output = 0;
     this.learned = false;
-
-    console.log(inputsCount);
+    this.isParent = false;
 
 }
 Neuron.prototype.MAX_REPETITION = 100;
-
-Neuron.prototype.update = function(inputs) {
-    var min = 0;
-    var limit = false;
-    for (var i = 0; i < inputs.length; i++) {
-        var rep = 0;
-        //if (this.repetitions[i] < this.MAX_REPETITION) {
-            rep = (this.repetitions[i] += inputs[i]);
-        //}
-        if (this.repetitions[i] > this.MAX_REPETITION) {
-            limit = true;
-            //this.repetitions[i] = this.MAX_REPETITION;
+Neuron.prototype.MAX_ERROR = 0.15;
+Neuron.prototype.update = function() {
+    if (this.parents && this.parents[0] instanceof Neuron) {
+        this.output = 0;
+        this.inputs = this.parents.map((e) => { return e.output; });
+    
+        var error = (1 - this.inputs.reduce((sum, e) => { return sum + e; }, 0) / this.inputs.length);
+        if (!this.learned && error <= this.MAX_ERROR/* === 0*/) {
+            if (++this.repetition >= this.MAX_REPETITION) 
+                this.learned = true;
         }
-        if (this.repetitions[min] > rep && rep > 0) {
-            min = i;
+        if (this.learned && error <= this.MAX_ERROR/* === 0*/) {
+            this.output = 1;
         }
     }
-    for (let i = 0; i < this.repetitions.length; i++) {
-        if (limit && this.repetitions[i] > 0 /*&& this.repetitions[i] < this.MAX_REPETITION*/) {
-            this.repetitions[i]--;
-        }
-    }
-    /*
-if (limit && this.repetitions[min] > 0 && this.repetitions[min] < this.MAX_REPETITION) {
-        this.repetitions[min]--;
-    }
-    */
-
+    //console.log(this + "");
 };
 Neuron.prototype.toString = function () {
-    return "r=" + this.repetitions + "  out=" + this.output;
+    return this.order + 
+           ") in=" + this.inputs.reduce((s, v) => { return "" + s + v; }, "") + 
+           " out=" + this.output;
 };
