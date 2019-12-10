@@ -7,9 +7,11 @@ var Game = new function() {
 	
 	this.isDebug = false;
 	this.objects = [];
+	this.framesCount = 0;
 	
 	var scenes = [];
 	var currentScene = null;
+	var _this = this;
 
 	this.getCurrentScene = function() {
 		return currentScene;
@@ -48,12 +50,16 @@ var Game = new function() {
 				Graphics.clear();
 				Graphics.color('green');
 				Graphics.fillRect(0, 0, width, height);
+				Graphics.color("darkgrey");
+				Graphics.font("15px Arial");
+				Graphics.drawText(_this.framesCount, 5, height-5);
 //---
 				currentScene.draw();
-				
 			}
+			++_this.framesCount;
 		};
-		setInterval(frame, 16);
+		setInterval(frame, 0);
+		//window.requestAnimationFrame(frame);
 	};
 
 };

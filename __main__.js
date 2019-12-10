@@ -42,6 +42,8 @@
 	scenePlay.addObject(ball);
 	scenePlay.addObject(new Score());
 
+	scenePlay.showObjects = true;
+
 	Game.addScene(scenePlay);
 	Game.start("scene-play");
 

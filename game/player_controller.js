@@ -19,7 +19,16 @@ PlayerController.prototype.onUpdate = function() {
 		this.owner.position.y += -5;
 	}
 	var ball = Game.getCurrentScene().getObject("ball");
-	if (this.owner === ball.pitcher && Input.isKeyDown("Space")) {
+	if (this.owner === ball.pitcher/* && Input.isKeyDown("Space")*/) {
 		ball.pitcher = null;
+	}
+
+	if (ball.position.x < (width / 2)) {
+		if (this.owner.position.y-20 < ball.position.y) {
+			this.owner.position.y += 2.5 + (Math.random()-0.5)*3;
+		}
+		if (this.owner.position.y-20 > ball.position.y){
+			this.owner.position.y -= 2.5 + (Math.random()-0.5)*3;
+		}
 	}
 };

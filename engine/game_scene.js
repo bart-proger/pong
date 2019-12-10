@@ -14,6 +14,8 @@ function GameScene(name) {
 //GameScene.prototype.onEnter = function() {}
 //GameScene.prototype.onExit = function() {}
 
+GameScene.prototype.showObjects = true;
+
 GameScene.prototype.addObject = function(gameObject) {
     if (gameObject instanceof GameObject && !this.objects.includes(gameObject)) {
         this.objects.push(gameObject);
@@ -65,19 +67,23 @@ GameScene.prototype.update = function() {
 };
 GameScene.prototype.draw = function() {
     this.objects.forEach(function(o) {
-        if (o.sprite) {
-            var sw = o.sprite.textureRect.w * o.sprite.scale.x,
-                sh = o.sprite.textureRect.h * o.sprite.scale.y;
-            Graphics.drawSprite(o.sprite.textureRect, 
-                                o.position.x + o.sprite.position.x - sw/2, 
-                                o.position.y + o.sprite.position.y - sh/2, 
-                                sw, sh);
+        if (this.showObjects) {
+            if (o.sprite) {
+                var sw = o.sprite.textureRect.w * o.sprite.scale.x,
+                    sh = o.sprite.textureRect.h * o.sprite.scale.y;
+                Graphics.drawSprite(o.sprite.textureRect, 
+                                    o.position.x + o.sprite.position.x - sw/2, 
+                                    o.position.y + o.sprite.position.y - sh/2, 
+                                    sw, sh);
+            }
+            if (o.onDraw) o.onDraw();
         }
-        if (o.onDraw) o.onDraw();
         if (Game.isDebug) {
-            o.showDbgInfo();
-            if (o.onShowDbgInfo) 
-                o.onShowDbgInfo();
+            if (this.showObjects) {
+                o.showDbgInfo();
+                if (o.onShowDbgInfo) 
+                    o.onShowDbgInfo();
+            }
             if (o.controller && o.controller.onShowDbgInfo) 
                 o.controller.onShowDbgInfo();
         }

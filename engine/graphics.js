@@ -74,6 +74,15 @@ var Graphics = new function(){
 		_this.context.lineTo(x2, y2);
 		_this.context.stroke();
 	};
+	this.drawCurve = function(xb, yb, x1, y1, x2, y2, xe, ye) {
+		this.context.beginPath();
+		this.context.moveTo(xb, yb);
+		if (!xe && !ye)
+			this.context.quadraticCurveTo(x1, y1, x2, y2);
+		else
+			this.context.bezierCurveTo(x1, y1, x2, y2, xe, ye);
+		this.context.stroke();
+	};
 };
 
 
