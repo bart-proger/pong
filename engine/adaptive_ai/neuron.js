@@ -1,8 +1,8 @@
 
-function Neuron(parents) {
+function Neuron(parents, value) {
 
-    this.parents = parents;
-    //this.childs = [];
+    this.value = value;
+    this.parents = parents ? parents : [];
     this.order = !parents ? 0 : 1 + parents.reduce((max, cur) => {
         return (cur.order > max) ? cur.order : max;
     }, 0);
@@ -10,26 +10,38 @@ function Neuron(parents) {
     this.recognitionsCount = 0;
     this.inputs = [];
     this.output = 0;
-    this.isLearned = /*!parents ? true :*/ false;
+    this.stop = 0;
+    this.isLearned = false;
+    this.isRecogned = false;
 
 }
-Neuron.prototype.MAX_LEARNINGS = 3; /*1-44, 45-...*/
+Neuron.prototype.MAX_LEARNINGS = 5; /*1-44, 45-...*/
 Neuron.prototype.MAX_NOISE = 0.34;
 
 Neuron.prototype.update = function() {
-    if (!this.parents)
-        return;
-    this.inputs = this.parents.map((p) => { return p.output; });
-    this.output = 0;
-    var noise = (1 - this.inputs.reduce((sum, e) => { return sum + e; }, 0) / this.inputs.length);
-
-    if (noise <= this.MAX_NOISE /*/ this.order*/ * (this.recognitionsCount / (this.order*2)/*this.MAX_LEARNINGS*/)){
-        if (!this.isLearned && ++this.learningsCount >= (this.order*2)/*this.MAX_LEARNINGS*/)
-            this.isLearned = true;
-        if (this.isLearned) {
-            if (this.recognitionsCount < (this.order*2)/*this.MAX_LEARNINGS*/)
-                ++this.recognitionsCount;
-            this.output = 1;
-        }
+    if (this.stop === 1) {
+        this.output = 0;
+        this.stop = 0;
+        //this.parents.forEach(p => { p.stop = 1; });
     }
+    if (this.parents.length) {       
+        this.inputs = this.parents.map((p) => { return p.output; });
+
+        var noise = (1 - this.inputs.reduce((sum, e) => { return sum + e; }, 0) / this.inputs.length);
+        var max = this.MAX_LEARNINGS;// * this.order;
+
+        if (noise /*=== 0){//*/<= this.MAX_NOISE * (this.recognitionsCount / (max * this.order))){
+            if (!this.isLearned && ++this.learningsCount >= max)
+                this.isLearned = true;
+            if (this.isLearned) {
+                if (this.recognitionsCount < (max * this.order))
+                    ++this.recognitionsCount;
+                this.output = 1;
+                this.parents.forEach(p => { p.stop = 1; });
+            }
+        }
+        else
+            this.output = 0;
+    }
+    this.isRecogned = this.output === 1;
 };

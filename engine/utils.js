@@ -25,7 +25,7 @@ Math.randomBool = function() {
 	return Math.random() < 0.5;
 };
 Math.randomSign = function() {
-	return Math.random < 0.5 ? -1 : 1;
+	return Math.random() < 0.5 ? -1 : 1;
 };
 
 Array.prototype.remove = function(element) {

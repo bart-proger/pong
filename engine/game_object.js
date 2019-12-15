@@ -42,5 +42,5 @@ GameObject.prototype.showDbgInfo = function() {
 GameObject.prototype.toString = function() {
 	if (!this.position) 
 		return this.name;
-	return this.name + " (" + this.position.x + ", " + this.position.y + ")";
+	return this.name + " (" + this.position.x.toFixed(0) + ", " + this.position.y.toFixed(0) + ")";
 };

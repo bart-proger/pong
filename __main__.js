@@ -6,7 +6,7 @@
 
 !function () {
 
-	Graphics.createCanvas(600, 400, "black");
+	Graphics.createCanvas(600, 600, "grey");
 
 	Game.isDebug = true;
 

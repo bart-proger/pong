@@ -25,10 +25,10 @@ PlayerController.prototype.onUpdate = function() {
 
 	if (ball.position.x < (width / 2)) {
 		if (this.owner.position.y-20 < ball.position.y) {
-			this.owner.position.y += 2.5 + (Math.random()-0.5)*3;
+			this.owner.position.y += 5 ;
 		}
 		if (this.owner.position.y-20 > ball.position.y){
-			this.owner.position.y -= 2.5 + (Math.random()-0.5)*3;
+			this.owner.position.y -= 5 ;
 		}
 	}
 };
