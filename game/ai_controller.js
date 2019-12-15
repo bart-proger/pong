@@ -26,7 +26,7 @@ AiController.prototype.onUpdate = function() {
 		bottom = 1;
 	if (this.owner.position.y-20 > ball.position.y+1)	
 		top = 1;
-	if (Math.abs(this.owner.position.y-20 - ball.position.y) <= 1) 
+	if (Math.abs(this.owner.position.y-20 - ball.position.y) <= 3) 
 		middle = 1;
 	if (Math.abs(this.owner.position.x - ball.position.x) < (width / 2))
 		near = 1;
