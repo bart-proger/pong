@@ -30,11 +30,11 @@ Neuron.prototype.update = function() {
         var noise = (1 - this.inputs.reduce((sum, e) => { return sum + e; }, 0) / this.inputs.length);
         var max = this.MAX_LEARNINGS;// * this.order;
 
-        if (noise /*=== 0){//*/<= this.MAX_NOISE * (this.recognitionsCount / (max * this.order))){
+        if (noise /*=== 0){//*/<= this.MAX_NOISE * (this.recognitionsCount / (max))){
             if (!this.isLearned && ++this.learningsCount >= max)
                 this.isLearned = true;
             if (this.isLearned) {
-                if (this.recognitionsCount < (max * this.order))
+                if (this.recognitionsCount < (max))
                     ++this.recognitionsCount;
                 this.output = 1;
                 this.parents.forEach(p => { p.stop = 1; });

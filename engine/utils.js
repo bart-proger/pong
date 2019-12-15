@@ -52,3 +52,23 @@ Array.prototype.intersect = function(array) {
 	});
 	return result;
 };
+Array.prototype.forReverse = function(callback, thisArg) {
+	if (!thisArg) 
+		thisArg = this;
+	for (var i = this.length-1; i >= 0; --i) 
+		if (this[i] !== undefined)
+			callback(this[i], i, this);
+};
+Array.prototype.index2DOf = function(element) {
+	var result = null;
+	this.some((array, i) => { 
+		return array.some((elem, j) => {
+			if (elem === element) {
+				result = {i: i, j: j};
+				return true;
+			}
+			return false;
+		});
+	});
+	return result;
+};
