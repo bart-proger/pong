@@ -5,8 +5,10 @@
 function AiController(owner) {
 	Controller.call(this, owner);
 
-	this.images = new NeuralNet(6);
-	this.knowledges = new NeuralNet();
+	this.imageNet = new NeuralNet("img");
+	this.knowledgeNet = new NeuralNet("knw");
+	this.prevImages = [];
+
 };
 AiController.prototype = Object.create(Controller.prototype);
 AiController.prototype.constructor = AiController;
@@ -38,22 +40,49 @@ AiController.prototype.onUpdate = function() {
 		++fail;// = 1;
 	else
 		fail = 0;
-	this.images.inputSignals([top, middle, bottom, far, near, pitcher, fail === 1 ? 1 : 0]);
-	this.images.update();
 
+	var action = {name: "idle", output: 1};
+	
 //-------------
 	if (ball.position.x > (width / 2)) {
 		if (this.owner.position.y-20 < ball.position.y) {
 			this.owner.position.y += 5 ;
+			action.name = "down";
 		}
 		if (this.owner.position.y-20 > ball.position.y){
 			this.owner.position.y -= 5 ;
+			action.name = "up";
 		}
 		if (this.owner === ball.pitcher) {
 			ball.pitcher = null;
+			action.name = "pitch";
 		}
 	}
+//-------------
+
+	this.imageNet.inputSignals([
+		{name: "top", output: top}, 
+		//{name: "middle", output: middle},
+		{name: "bottom", output: bottom},
+		//{name: "far", output: far},
+		//{name: "near", output: near},
+		{name: "pitcher", output: pitcher},
+		{name: "fail", output: fail === 1 ? 1 : 0}
+	]);
+	//this.prevImages = this.imageNet.outputSignals();
+	var images = this.imageNet.update();
+	
+	this.prevImages.forEach(pimg => {
+		images.forEach(img => {
+			var signals = [pimg, action, img];
+			this.knowledgeNet.inputSignals(signals/*this.prevImages.concat(images)*/);
+			this.knowledgeNet.update(1);
+		});
+	});
+
+	(this.prevImages = images).forEach(img => img.name = "p-" + img.name);
 };
 AiController.prototype.onShowDbgInfo = function() {
-	this.images.onShowDbgInfo(20, 50);
+	this.imageNet.onShowDbgInfo(20, 50, 200);
+	this.knowledgeNet.onShowDbgInfo(20, 300, 300);
 };
