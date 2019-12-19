@@ -17,7 +17,7 @@ function NeuralNet(prefix) {
 }
 
 NeuralNet.prototype.inputSignals = function(signals) {
-    //this.receptors.forEach(r => r.output = 0);
+    this.receptors.forEach(r => r.output = 0);
     signals.forEach(s => {
         var found = this.receptors.find(r => s.name === r.name);
         if (found === undefined) {
@@ -40,60 +40,34 @@ NeuralNet.prototype.neuronsCount = function() {
 NeuralNet.prototype.update = function(orderDepht) {
     var activeNeurons = [],
         newParents = [];
+    
+    this.newNeuron = null;
 
-    if (this.newNeuron) {
-        this.newNeuron = null;
-    }
-
-    this.layers.forReverse((neurons, order) => {
-        if (!orderDepht || (orderDepht > 0 && order <= orderDepht))
-            neurons.forEach((n) => {
-                //if (i < this.neurons.length - this.receptors.length)
-                    n.update();
-                if (n.output === 1) {
-                    /*var isParent = function(neuron) {
-                        return activeNeurons.some(an => { 
-                            return an.parents && an.parents.includes(neuron)
-                                || neuron.parents && neuron.parents.some(np => { return isParent(np); });
-                        })
-                    };
-                    if (!isParent(n)) {*/
-
-                    //if (activeNeurons.length < 5) {
-                        //if (activeNeurons.some(an => an.parents.includes(n)) 
-                        //|| activeParents.some(ap => ap.parents.includes(n))) {
-                        //    activeParents.push(n);
-                        //}
-                        //else {
-                        //    //if (n.order > order) order = n.order;
-                        //if (!activeNeurons[0] || (activeNeurons[0] && activeNeurons[0].order-n.order < 3))
-                        //if (activeNeurons.length < 10) 
-                        //if (n.isRecogned)
-                        if (!orderDepht || n.order < orderDepht)
-                            newParents.push(n);
-                        activeNeurons.push(n);
-                        //}
-                    //}
-                }
-            }); 
+    this.layers.forReverse((neurons) => {
+        neurons.forEach((n) => {
+            if (n.update() === 1 && n.noise === 0) {
+                newParents.push(n);
+                activeNeurons.push(n);
+            }
+        }); 
     });
     if (newParents.length > 1) {
         if (!this.layers.some(neurons => { 
             return neurons.some((n) => { 
-                return (n.parents.length > 0 && 
-                    n.parents.intersect(newParents).length === n.parents.length); 
-                    //&& n.parents.every((p,i) => p === newParents[i]);
+                return (n.parents.length > 0 //newParents.length === n.parents.length
+                     && n.parents.intersect(newParents).length === n.parents.length); 
         }); })) {
             this.newNeuron = new Neuron(newParents, this.prefix + (this.neuronsCount()-this.receptors.length));
             if (!this.layers[this.newNeuron.order])
             this.layers[this.newNeuron.order] = [];
             this.layers[this.newNeuron.order].push(this.newNeuron);
         }
+        console.log((this.newNeuron ? "NEW =" : "") + newParents.reduce((s,p)=>s+"  "+p.name, ""));
     }
     
     return activeNeurons.map(an => { return {name: an.name, output: an.output}; });
 };
-NeuralNet.prototype.onShowDbgInfo = function(offx, offy, maxh) {
+NeuralNet.prototype.onShowDbgInfo = function(offx, offy, maxw, maxh) {
     var parentPos = [];
     var stepx = DBG.radius*8,
         stepy = DBG.radius*5,
@@ -108,6 +82,7 @@ NeuralNet.prototype.onShowDbgInfo = function(offx, offy, maxh) {
 
     var actives = [];
     
+    stepx = /*Math.max(stepx,*/ maxw / (this.layers.length+1)/*)*/;
     this.layers.forEach((neurons, order) => {
         if (!parentPos[order]) parentPos[order] = [];
         if (!DBG.compact) {
@@ -125,34 +100,38 @@ NeuralNet.prototype.onShowDbgInfo = function(offx, offy, maxh) {
             if (DBG.compact)
                 y = offy + (order % 2) * stepy/2 + i*stepy;
             else
-                y = offy + stepy*(i+1) + (order % 2) * stepy/2;
+                y = offy + stepy*(i+1) + ((order % 2) ? stepy/4 : -stepy/4);
             parentPos[order].push({x: x, y: y});
 //parents
             if (!DBG.compact && DBG.showLinks) {
-                Graphics.color(n.output === 1 ? "orangered" : "black");
                 if (n === this.newNeuron)
                     Graphics.color("violet");
                 n.parents.forEach((p, pi) => {
+                    Graphics.color(n.output === 1 ? "yellow" : "black");
                     var pp = this.layers.index2DOf(p);
                     var yy = 2*DBG.radius / (n.parents.length+1);
                     Graphics.drawCurve(parentPos[pp.i][pp.j].x + DBG.radius, parentPos[pp.i][pp.j].y, 
                                     parentPos[pp.i][pp.j].x + DBG.radius + DBG.radius*3.5, parentPos[pp.i][pp.j].y, 
                                     x - DBG.radius*2.5, y,
                                     x, y - (DBG.radius - yy/2) + pi * yy);
-                    if (n.output === 1)
+                    if (n.output === 1) {
+                        Graphics.color("yellow");
                         Graphics.drawCircle(parentPos[pp.i][pp.j].x, parentPos[pp.i][pp.j].y, DBG.radius);
+                    }
                 });
             }
 //neurons
             Graphics.color("green");
             Graphics.fillCircle(x, y, DBG.radius);
             Graphics.color(n === this.newNeuron ? "violet" : 
-                           n.output === 1 ? "yellow" : 
+                           n.output === 1 ? "yellow" :
+                           n.output === 1 && n.noise > 0 ? "gold" :
                            n.isRecogned ? "blue" : 
+                           n.isActive && !n.isLearned ? "aqua" :
                            "black");
             //if (n === this.newNeuron)
             //    Graphics.color("violet");
-            if (n.isLearned) 
+            if (n.isLearned || (n.isActive && !n.isLearned)) 
                 Graphics.fillCircle(x, y, n.output === 1 ? DBG.radius*1.2 : DBG.radius);
             else
                 Graphics.drawCircle(x, y, DBG.radius);
@@ -169,7 +148,7 @@ NeuralNet.prototype.onShowDbgInfo = function(offx, offy, maxh) {
     var child = null;
     this.layers.some((neurons, order) => {
         return neurons.some((n, i) => { 
-            if (n.parents.intersect(actives).length === actives.length){
+            if (n.parents.length === actives.length && n.parents.intersect(actives).length === n.parents.length){
                 child = {i: order, j: i};
                 return true;
             }

@@ -3,8 +3,7 @@
 
 
 function PlayerController(owner) {
-
-	Controller.apply(this, arguments);
+	Controller.call(this, owner);
 
 };
 

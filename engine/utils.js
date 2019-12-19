@@ -72,3 +72,12 @@ Array.prototype.index2DOf = function(element) {
 	});
 	return result;
 };
+Array.prototype.unique = function(callbackfn, thisArg) {
+	if (!thisArg) thisArg = this;
+	var result = [];
+	this.forEach(e => {
+		if (result.every(r => callbackfn(e, r)))
+			result.push(e);
+	});
+	return result;
+};
